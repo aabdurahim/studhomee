@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Merriweather';
+	src: local('Merriweather'), url('./fonts/Merriweather-Light.ttf')  format('truetype'), 
+}
+/* @font-face {
+	font-family: 'OpenSans';
+	src: local('OpenSans'), url('./fonts/OpenSans-Medium.ttf')  format('truetype'), 
+} */
+@font-face {
+	font-family: 'SourceSansPro';
+	src: local('SourceSansPro'), url('./fonts/SourceSansPro-Light.ttf')  format('truetype'), 
+}
+@font-face {
+	font-family: 'Nunito';
+	src: local('Nunito'), url('./fonts/Nunito-VariableFont_wght.ttf')  format('truetype'), 
+}
+html {
+	scroll-behavior: smooth;
+	/* overflow: hidden; */
+	}
+.bg {
+  background: rgba(76,133,211,0.1);
+}
+.sub {
+	animation: pulse 1s infinite;
+} 
+
+.sub:hover {
+  background: #4c85d3;
+  color: #FFFFFF;
+  animation: none;
+}
+
+.swiper-button-prev::after {
+	display: none;
+}
+
+.swiper-button-next::after {
+	display: none;
+}
+
+.anime__left1 {
+	transform: translateX(-120%);
+	transition: all .8s ease 0.5s;
+	transition-delay: 100ms;
+	opacity: 0;
+}
+
+.anime__right1 {
+	transform: translateX(350%);
+	transition: all .8s ease 0.5s;
+	transition-delay: 100ms;
+	opacity: 0;
+}
+.active .anime__left1 {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+@keyframes pulse {
+	0% {
+			box-shadow: 0 0 0 3px #4c85d3;
+	}
+	100% {
+			box-shadow: 0 0 0 10px transparent;
+	}
+}
