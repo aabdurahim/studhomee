@@ -38,8 +38,10 @@
       <div v-if="profile">
         <div class="flex flex-wrap mt-10">
           <div v-for="admin in admins" :key="admin.id" class="bg-white rounded-md border shadow mr-5 mb-5">
-            <img src="/img/user.png" alt="" class="w-2/5 m-auto py-5">
-            <p class="text-xl text-center font-medium pb-5">{{ admin.user.email }}</p>
+            <img src="/img/user.png" alt="" class="w-[100px] m-auto py-5">
+            <p class="text-xl text-left font-medium pb-5 px-3">Name: {{ admin.name }}</p>
+            <p class="text-xl text-left font-medium pb-5 px-3">Email: {{ admin.user.email }}</p>
+            <p class="text-xl text-center font-medium pb-5"></p>
             <div class="flex justify-between items-center border-t ">
               <div class="w-1/3 py-5 px-7 border-r cursor-pointer hover:bg-gray-100 hover:text-main-text">
                 <font-awesome-icon class="text-lg" icon="fa-solid fa-pen-to-square" />
@@ -104,7 +106,15 @@ export default {
             })
           }
 
-          fetch('http://91.201.214.131:8080/admins', adminBody);
+          fetch('http://91.201.214.131:8080/admins', adminBody)
+          .then(() => {
+            alert('Admin successfully established!');
+            this.getAdmins();
+          })
+          .catch(error => {
+            console.error(error);
+            alert('Error!' + error.message)
+          });
         });
     },
     getAdmins() {
