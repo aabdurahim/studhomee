@@ -2,13 +2,13 @@
   <Navbar class="mx-3 lg:mx-0" />
   <div class="bg px-3 lg:px-0">
     <div class="relative">
-      <video autoplay muted loop src="/img/video.webm"></video>
+      <video autoplay muted loop src="https://res.cloudinary.com/dmhy6sxqx/video/upload/v1685879608/video_xnzksa.webm"></video>
       <div class="absolute video">
-        <h2 class="text-2xl lg:text-7xl 2xl:ml-20 font-bold text-white uppercase animate__animated animate__fadeInDown slick-active">Your classroom</h2>
-        <p class="w-2/3 mt-10 text-center text-white hidden lg:flex animate__animated animate__fadeInDown slick-active">Any successful career starts with good education. Together with us you will have deeper
+        <h2 class="sm:text-3xl lg:w-11/12 xl:w-3/4 2xl:w-auto mx-auto text-2xl lg:text-5xl xl:text-7xl xl:ml-0 2xl:ml-20 font-bold text-white uppercase animate__animated animate__fadeInDown slick-active">Your classroom</h2>
+        <p class="w-2/3 mx-auto ml-0 mt-10 text-sm xl:text-base text-center text-white hidden lg:flex animate__animated animate__fadeInDown slick-active">Any successful career starts with good education. Together with us you will have deeper
           knowledge of the subjects that will be especially useful for you when climbing the career
           ladder.</p>
-        <div class="hidden lg:flex w-2/3 animate__animated animate__fadeInUp slick-active">
+        <div class="hidden xl:flex w-2/3 animate__animated animate__fadeInUp slick-active">
           <h3 class="discover w-1/3 text-2xl my-16 mx-auto text-white text-center px-5 py-5 border border-white cursor-pointer" v-on:click="fadeMe">Discover more</h3>
         </div>
         <transition name="fade">
@@ -101,7 +101,12 @@
         <hr class="bg-main-text mt-12 lg:mt-0 mb-10">
         <h4 class="text-md text-main-text font-semibold mb-5 uppercase text-center">Our teachers</h4>
         <h2 class="title-text text-2xl lg:text-4xl text-hero-text font-semibold mb-5 text-center">Meet out teachers</h2>
-        <p class="lg:w-2/3 mx-3 lg:mx-auto text-sm lg:text-base text-center text-gray-500">Our dedicated teachers are a major factor in the success of StudHome. Teachers are drawn to the StudHome family because of our robust model that emphasizes project-based learning, art and technology and a supportive environment in which everyone is accountable for helping students reach the goal of attending college.</p>
+        <p class="lg:w-2/3 mx-3 lg:mx-auto text-sm lg:text-base text-center text-gray-500">1.	Our school's teachers are passionate and dedicated educators who are committed to helping students achieve their full potential.</p>
+        <p class="lg:w-2/3 mx-3 lg:mx-auto text-sm lg:text-base text-center text-gray-500">2.	With years of experience and advanced degrees in their fields, our teachers bring a wealth of knowledge and expertise to the classroom.</p>
+        <p class="lg:w-2/3 mx-3 lg:mx-auto text-sm lg:text-base text-center text-gray-500">3.	Our teachers use innovative and engaging teaching methods that cater to the unique learning styles of each student.</p>
+        <p class="lg:w-2/3 mx-3 lg:mx-auto text-sm lg:text-base text-center text-gray-500">4.	They are available to provide one-on-one support and guidance to help students overcome challenges and reach their academic goals.</p>
+        <p class="lg:w-2/3 mx-3 lg:mx-auto text-sm lg:text-base text-center text-gray-500">5.	Our teachers foster a supportive and collaborative learning environment where students feel comfortable and confident to ask questions and participate in class discussions.</p>
+      
       </div>
       <div class="lg:flex pl-10 pr-5 py-10 lg:py-20"> 
         <div class="relative mb-5 lg:mb-0"  v-for="teacher in teachers" :key="teacher">
@@ -126,9 +131,14 @@
   <Foot />
 </template>
 
-<script>
+
+
+
+
+<script >
 import Navbar from '../../src/../src/components/Navbar.vue'
 import Foot from '../../src/../src/components/Footer.vue'
+
 
 export default ({
   data() {
@@ -139,30 +149,30 @@ export default ({
       items: [
         {
           title: 'Preschoolers',
-          desc: 'Skills needed for school: we will teach you to read, write and help develop logical thinking',
+          desc: 'Our preschool education program is designed to provide a nurturing and engaging learning environment for children aged 3-5 years old.',
           img: '/img/14.jpg',  
         },
         {
           title: '1st to 4th grade',
-          desc: 'We teach with pleasure: we instill interest in classes and do not let you get bored',
+          desc: 'Our education program for students in 1st to 4th grade focuses on building a strong foundation in core subjects.',
           img: '/img/15.jpg',
           expanded: false
         },
         {
           title: '5th to 9th grade',
-          desc: 'Grades will get better: we will tell you how to improve your knowledge in subjects and prepare for scientific competitions',
+          desc: 'Our education program for students in 5th to 9th grade is designed to help students develop critical thinking and problem-solving skills.',
           img: '/img/16.jpg',
           expanded: false
         },
         {
           title: '9th to 10th grade',
-          desc: 'Prepare for university entrance exams: compulsory subjects and electives',
+          desc: 'Our education program for students in 9th to 10th grade is focused on helping students prepare for college and beyond.',
           img: '/img/17.jpg',
           expanded: false
         },
         {
           title: 'Teachers',
-          desc: 'We will help improve qualifications, deepen knowledge, update lesson plans and involve students in the learning process',
+          desc: 'Our education program for teachers is designed to provide professional development and support to educators at all levels.',
           img: '/img/18.jpg',
           expanded: false
         }
@@ -261,10 +271,6 @@ showContent(index) {
 }
 
 })
-</script>
-
-<script setup>
-
 </script>
 
 <style scoped>
