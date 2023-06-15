@@ -98,6 +98,8 @@ export default {
 
       .then(response => {
           console.log(response.data);
+          alert('Section successfully established!');
+          this.getSections();
         })
         .catch(error => {
           console.error(error);
