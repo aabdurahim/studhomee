@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   <div class="w-full">
     <font-awesome-icon @click="clickMenu" class="text-3xl text-hero-block float-right absolute right-1 top-3" icon="fa-solid fa-bars" />
     <div v-if="showMenu" class="w-2/3 px-5 pb-3 bg-white border absolute z-50 right-0 top-14 rounded-md">
@@ -320,4 +320,4 @@ section {
 .active2 {
   color: #206bc4;
 }
-</style>
+</style>-->
