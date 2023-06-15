@@ -3,9 +3,7 @@
     <div class="text-sm font-semibold text-gray-100 bg-hero-text rounded-md px-2">Teacher</div>
     <div class="flex items-center justify-between pr-24">
       <p class="text-gray-500 text-lg border border-gray-300 rounded-md px-3 py-1 mr-3">Session: 2023</p>
-      <select name="lan" id="" class="text-gray-500 text-lg border border-gray-300 rounded-md px-3 py-1">
-        <option value="">EN</option>
-      </select>
+      
       <font-awesome-icon icon="fa-regular fa-bell" class="text-gray-900 relative text-xl mx-3 cursor-pointer" @click="showNotifications" />
       <div class="flex w-10 ml-2">
         <img src="/img/user.png" alt="">
