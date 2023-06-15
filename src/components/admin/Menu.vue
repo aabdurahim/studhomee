@@ -1,103 +1,106 @@
 <template>
-  <section class="flex">
-    <div class="lg:block hidden panel w-1/5 bg-hero-text min-h-screen">
-      <div class="w-4/5 flex mx-auto">
-        <h2 class="text-3xl font-semibold my-5 text-gray-200">StudHome</h2>
-        <img src="/img/logo1.png" alt="" class="w-16">
+  <section>
+    <div class="lg:flex hidden">
+      <div class="lg:block hidden panel w-1/5 bg-hero-text min-h-screen">
+        <div class="w-4/5 flex mx-auto">
+          <h2 class="text-3xl font-semibold my-5 text-gray-200">StudHome</h2>
+          <img src="/img/logo1.png" alt="" class="w-16">
+        </div>
+        <ul class="text-gray-400 cursor-pointer mx-7 py-5">
+          <li @click="showDash(), setActiveIndex(0)" :class="{ active: activeIndex === 0 }" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
+            <font-awesome-icon icon="fa-solid fa-house" />
+            <span class="mx-3">Dashboard</span>
+          </li>
+          <li :class="{ active: activeIndex === 1 }" @click="setActiveIndex(1)"  class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
+            <font-awesome-icon icon="fa-solid fa-book-open" />
+            <span @click="toggleAttendanceList" :class="{ active: showAttendanceList }" class="mx-3">Attendance</span>
+            <div v-if="showAttendanceList">
+              <p @click="showAttendance('student'), setActiveList(10)" :class="{ active2: activeList === 10 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Student Attendance</p>
+              <!-- <p @click="showAttendance('teacher'), setActiveList(11)" :class="{ active2: activeList === 11 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Teacher Attendance</p> -->
+            </div>
+          </li>
+          <li :class="{ active: activeIndex === 2 }" @click="setActiveIndex(2)" class="text-lg py-3 transition ease-in-out delay-75">
+            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+            <span class="mx-3 hover:text-gray-100 " @click="toggleAcademicList" :class="{ active: showAcademicList }">Academic</span>
+            <div v-if="showAcademicList">
+              <p @click="showAcademic('department'), setActiveList(0)" :class="{ active2: activeList === 0 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Department</p>
+              <p @click="showAcademic('shedule'), setActiveList(1)" :class="{ active2: activeList === 1 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Shedule</p>
+              <p @click="showAcademic('classRoom'), setActiveList(2)" :class="{ active2: activeList === 2 }" class="hover:text-gray-100 text-lg px-9 py-2 transition ease-in-out delay-75">Class Room</p>
+              <p @click="showAcademic('class'), setActiveList(3)" :class="{ active2: activeList === 3 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Class</p>
+              <p @click="showAcademic('section'), setActiveList(4)" :class="{ active2: activeList === 4 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Section</p>
+              <p @click="showAcademic('subject'), setActiveList(5)" :class="{ active2: activeList === 5 }" class="hover:text-gray-100 text-lg px-9 py-2 transition ease-in-out delay-75">Subject</p>
+              <p @click="showAcademic('homework'), setActiveList(6)" :class="{ active2: activeList === 6 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Homework</p>
+            </div>
+          </li>
+          <li :class="{ active: activeIndex === 3 }" @click="setActiveIndex(3)" class="text-lg py-3 transition ease-in-out delay-75">
+            <font-awesome-icon icon="fa-solid fa-user-group" />
+            <span class="mx-3 hover:text-gray-100 " @click="toggleUsersList" :class="{ active: showUsersList }">Users</span>
+            <div v-if="showUsersList">
+              <p @click="showUsers('admin'), setActiveList(7)" :class="{ active2: activeList === 7 }" class="hover:text-gray-100 text-lg px-9 py-2 transition ease-in-out delay-75">Admin</p>
+              <p @click="showUsers('student'), setActiveList(8)" :class="{ active2: activeList === 8 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Student</p>
+              <p @click="showUsers('teacher'), setActiveList(9)" :class="{ active2: activeList === 9 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Teacher</p>
+            </div>
+          </li>
+          <li :class="{ active: activeIndex === 4 }" @click="setActiveIndex(4)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
+            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+            <span class="mx-3" @click="toggleExamList" :class="{ active: showExamList }">Exam</span>
+            <div v-if="showExamList">
+              <p @click="showExam('list'), setActiveList(12)" :class="{ active2: activeList === 12 }" class="hover:text-gray-100 text-lg px-9 py-2 transition ease-in-out delay-75">Exam List</p>
+              <p @click="showExam('schedule'), setActiveList(13)" :class="{ active2: activeList === 13 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Schedule</p>
+              <p @click="showExam('result'), setActiveList(14)" :class="{ active2: activeList === 14 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Result</p>
+            </div>
+          </li>
+          <!-- <li :class="{ active: activeIndex === 5 }" @click="setActiveIndex(5)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
+            <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
+            <span class="mx-3">Report</span>
+          </li> -->
+          <li :class="{ active: activeIndex === 6 }" @click="setActiveIndex(6)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
+            <font-awesome-icon icon="fa-regular fa-bell" /> 
+            <span class="mx-3" @click="toggleAnnouncementList" :class="{ active: showAnnouncementist }">Announcement</span>
+            <div v-if="showAnnouncementList">
+              <p @click="showAnnouncement('message'), setActiveList(15)" :class="{ active2: activeList === 15 }" class="hover:text-gray-100 text-lg px-9 py-2 transition ease-in-out delay-75">Message</p>
+            </div>
+          </li>
+          <!-- <li :class="{ active: activeIndex === 7 }" @click="setActiveIndex(7)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
+            <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
+            <span class="mx-3">Accounting</span>
+          </li>
+          <li :class="{ active: activeIndex === 8 }" @click="setActiveIndex(8)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
+            <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
+            <span class="mx-3">Roles</span>
+          </li> -->
+          <!-- <li :class="{ active: activeIndex === 9 }" @click="setActiveIndex(9)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
+            <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
+            <span class="mx-3">Settings</span>
+          </li> -->
+          <li :class="{ active: activeIndex === 10 }" @click="setActiveIndex(10)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
+            <font-awesome-icon icon="fa-solid fa-right-from-bracket" />
+            <span class="mx-3"  @click="$store.dispatch('logout')">Logout</span>
+          </li>
+        </ul>
+        <div class="clock mx-auto mt-5">
+          <div class="hour">
+            <div class="hr" id="hr"></div>
+          </div>
+          <div class="min">
+            <div class="mn" id="mn"></div>
+          </div>
+          <div class="sec">
+            <div class="sc" id="sc"></div>
+          </div>
+        </div>
+        <div>
+          <div class="w-4/5 flex mx-auto py-2 px-5 rounded-md bg-logo mt-5 cursor-pointer">
+            <p class="text-lg text-gray-100 font-semibold">{{ currentDay }}</p>
+            <p class="text-lg text-gray-100 font-semibold ml-2">{{ currentDate }}</p>
+          </div>
+        </div>
       </div>
-      <ul class="text-gray-400 cursor-pointer mx-7 py-5">
-        <li @click="showDash(), setActiveIndex(0)" :class="{ active: activeIndex === 0 }" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
-          <font-awesome-icon icon="fa-solid fa-house" />
-          <span class="mx-3">Dashboard</span>
-        </li>
-        <li :class="{ active: activeIndex === 1 }" @click="setActiveIndex(1)"  class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
-          <font-awesome-icon icon="fa-solid fa-book-open" />
-          <span @click="toggleAttendanceList" :class="{ active: showAttendanceList }" class="mx-3">Attendance</span>
-          <div v-if="showAttendanceList">
-            <p @click="showAttendance('student'), setActiveList(10)" :class="{ active2: activeList === 10 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Student Attendance</p>
-            <!-- <p @click="showAttendance('teacher'), setActiveList(11)" :class="{ active2: activeList === 11 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Teacher Attendance</p> -->
-          </div>
-        </li>
-        <li :class="{ active: activeIndex === 2 }" @click="setActiveIndex(2)" class="text-lg py-3 transition ease-in-out delay-75">
-          <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-          <span class="mx-3 hover:text-gray-100 " @click="toggleAcademicList" :class="{ active: showAcademicList }">Academic</span>
-          <div v-if="showAcademicList">
-            <p @click="showAcademic('department'), setActiveList(0)" :class="{ active2: activeList === 0 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Department</p>
-            <p @click="showAcademic('shedule'), setActiveList(1)" :class="{ active2: activeList === 1 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Shedule</p>
-            <p @click="showAcademic('classRoom'), setActiveList(2)" :class="{ active2: activeList === 2 }" class="hover:text-gray-100 text-lg px-9 py-2 transition ease-in-out delay-75">Class Room</p>
-            <p @click="showAcademic('class'), setActiveList(3)" :class="{ active2: activeList === 3 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Class</p>
-            <p @click="showAcademic('section'), setActiveList(4)" :class="{ active2: activeList === 4 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Section</p>
-            <p @click="showAcademic('subject'), setActiveList(5)" :class="{ active2: activeList === 5 }" class="hover:text-gray-100 text-lg px-9 py-2 transition ease-in-out delay-75">Subject</p>
-            <p @click="showAcademic('homework'), setActiveList(6)" :class="{ active2: activeList === 6 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Homework</p>
-          </div>
-        </li>
-        <li :class="{ active: activeIndex === 3 }" @click="setActiveIndex(3)" class="text-lg py-3 transition ease-in-out delay-75">
-          <font-awesome-icon icon="fa-solid fa-user-group" />
-          <span class="mx-3 hover:text-gray-100 " @click="toggleUsersList" :class="{ active: showUsersList }">Users</span>
-          <div v-if="showUsersList">
-            <p @click="showUsers('admin'), setActiveList(7)" :class="{ active2: activeList === 7 }" class="hover:text-gray-100 text-lg px-9 py-2 transition ease-in-out delay-75">Admin</p>
-            <p @click="showUsers('student'), setActiveList(8)" :class="{ active2: activeList === 8 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Student</p>
-            <p @click="showUsers('teacher'), setActiveList(9)" :class="{ active2: activeList === 9 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Teacher</p>
-          </div>
-        </li>
-        <li :class="{ active: activeIndex === 4 }" @click="setActiveIndex(4)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
-          <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-          <span class="mx-3" @click="toggleExamList" :class="{ active: showExamList }">Exam</span>
-          <div v-if="showExamList">
-            <p @click="showExam('list'), setActiveList(12)" :class="{ active2: activeList === 12 }" class="hover:text-gray-100 text-lg px-9 py-2 transition ease-in-out delay-75">Exam List</p>
-            <p @click="showExam('schedule'), setActiveList(13)" :class="{ active2: activeList === 13 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Schedule</p>
-            <p @click="showExam('result'), setActiveList(14)" :class="{ active2: activeList === 14 }" class="hover:text-gray-100 text-lg px-9 py-1 transition ease-in-out delay-75">Result</p>
-          </div>
-        </li>
-        <!-- <li :class="{ active: activeIndex === 5 }" @click="setActiveIndex(5)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
-          <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
-          <span class="mx-3">Report</span>
-        </li> -->
-        <li :class="{ active: activeIndex === 6 }" @click="setActiveIndex(6)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
-          <font-awesome-icon icon="fa-regular fa-bell" /> 
-          <span class="mx-3" @click="toggleAnnouncementList" :class="{ active: showAnnouncementist }">Announcement</span>
-          <div v-if="showAnnouncementList">
-            <p @click="showAnnouncement('message'), setActiveList(15)" :class="{ active2: activeList === 15 }" class="hover:text-gray-100 text-lg px-9 py-2 transition ease-in-out delay-75">Message</p>
-          </div>
-        </li>
-        <!-- <li :class="{ active: activeIndex === 7 }" @click="setActiveIndex(7)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
-          <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
-          <span class="mx-3">Accounting</span>
-        </li>
-        <li :class="{ active: activeIndex === 8 }" @click="setActiveIndex(8)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
-          <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
-          <span class="mx-3">Roles</span>
-        </li> -->
-        <!-- <li :class="{ active: activeIndex === 9 }" @click="setActiveIndex(9)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
-          <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
-          <span class="mx-3">Settings</span>
-        </li> -->
-        <li :class="{ active: activeIndex === 10 }" @click="setActiveIndex(10)" class="hover:text-gray-100 text-lg py-3 transition ease-in-out delay-75">
-          <font-awesome-icon icon="fa-solid fa-right-from-bracket" />
-          <span class="mx-3"  @click="$store.dispatch('logout')">Logout</span>
-        </li>
-      </ul>
-      <div class="clock mx-auto mt-5">
-        <div class="hour">
-          <div class="hr" id="hr"></div>
-        </div>
-        <div class="min">
-          <div class="mn" id="mn"></div>
-        </div>
-        <div class="sec">
-          <div class="sc" id="sc"></div>
-        </div>
-      </div>
-      <div>
-        <div class="w-4/5 flex mx-auto py-2 px-5 rounded-md bg-logo mt-5 cursor-pointer">
-          <p class="text-lg text-gray-100 font-semibold">{{ currentDay }}</p>
-          <p class="text-lg text-gray-100 font-semibold ml-2">{{ currentDate }}</p>
-        </div>
+      <div class="w-4/5">
+        <component :is="currentComponent" />
       </div>
     </div>
-    <div class="w-4/5">
-      <component :is="currentComponent" />
-    </div>
+    <MenuMobile class="lg:hidden" />
   </section>
 </template>
 
@@ -119,6 +122,7 @@ import ExamList from './exam/ExamList.vue';
 import ExamSchedule from './exam/ExamSchedule.vue';
 import ExamResult from './exam/ExamResult.vue';
 import AnnouncementMessage from './announcement/Message.vue'
+import MenuMobile from './MobileMenu.vue'
 
 export default {
   data() {
@@ -180,7 +184,8 @@ export default {
     ExamList,
     ExamSchedule,
     ExamResult,
-    AnnouncementMessage
+    AnnouncementMessage,
+    MenuMobile
   },
   methods:{
     setActiveIndex(index) {
