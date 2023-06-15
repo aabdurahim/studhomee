@@ -4,35 +4,26 @@
 
     <SlaiderHero />
 
-    <div class="lg:flex justify-between items-center p-3 pt-10 lg:pt-20 lg:p-20" v-scroll="handleScroll" :class="{ 'active' : 'isActive' }">
+    <div class="lg:flex justify-between items-center p-3 pt-10 lg:pt-20 lg:p-20" v-scroll="handleScroll" :class="{ 'active' : 'isActive' }" id="google_translate_element">
       <div class="container w-full lg:w-2/5">
-        <h2 data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-quad" class="text-hero-text text-xl lg:text-3xl font-bold mb-5">Study at a convenient time, in a convenient place and at your
-          own pace!</h2>
-        <p data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-quad" class="text-base lg:text-lg">Classes are attended by students from all cities of Kazakhstan, so StudHome provides schedule
-          flexibility. Studying at StudHome can be combined with classes at a regular school, as well as with various
-          circles and sections.</p> <br>
+        <h2 data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-quad" class="text-hero-text text-xl sm:text-2xl md:text-3xl font-bold mb-5">Welcome to our online school platform! We offer a complete learning model that allows you to study at your convenience!</h2>
+        <p data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-quad" class="text-base md:text-lg">Our online platform provides access to a wide range of educational resources, including interactive exercises, multimedia content, and high-quality educational materials. You can officially enroll in our online school or use our platform to supplement your existing education.</p> <br>
         <p data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-quad" class="text-xl font-semibold">#1 Complete learning model</p> <br>
-        <p data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-quad" class="text-base lg:text-lg">You can officially enroll in our school or study with us in addition to your main school.</p>
+        <p data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-quad" class="text-base md:text-lg">We have been refining our online education system  and have developed a blended learning model that combines online and offline learning.</p>
         <br>
         <h2 data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-quad" class="text-xl font-semibold">#2 Blended learning model</h2> <br>
-        <p data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-quad" class="text-base lg:text-lg">StudHome is a school on the Internet, which means in any place convenient for you. We have been
-          improving our system of distance school education for more than 10 years</p>
+        <p data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-quad" class="text-base md:text-lg">In addition to our online platform, we offer regular online classes and consultations with experienced teachers. This allows you to get personalized feedback, ask questions, and interact with other students in a virtual classroom setting.Our online school platform provides a convenient, flexible, and effective way to learn and achieve your educational goals. Join our community of students from all over the world and start your online learning journey today!</p>
       </div>
       <img src="../assets/img/4.jpg" alt="" class="py-10 lg:py-0 lg:w-1/2 lg:rounded-full">
     </div>
 
     <div class="lg:flex justify-between items-center px-3 lg:px-20">
       <img src="../assets/img/5.jpg" alt="" class="hidden lg:flex lg:w-2/5 lg:rounded-full">
-      <div class="container lg:w-2/5">
-        <h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-quad" class="text-hero-text text-xl lg:text-3xl font-bold mb-5">StudHome is a complete ecosystem for distance learning</h2>
-        <p data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-quad" class="text-base lg:text-lg">Qualitatively prepared lessons, interactive tests and simulators, teachers who will answer the
-          student's questions, check homework and give feedback, a class schedule and a journal with grades, the
-          possibility of enrolling and obtaining a state certificate upon successful completion of the UNT.</p> <br>
-        <p data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-quad" class="text-lg lg:text-xl font-semibold">Start studying today, and pay for the chosen format at the end of the trial
-          period!</p> <br>
-        <button
-          class="border-2 border-main-text rounded-full px-5 py-1 lg:px-12 lg:py-3 text-main-text text-lg lg:text-xl font-semibold transition ease-in-out delay-75 hover:bg-main-text hover:text-white">Contact
-          me!</button>
+      <div class="container lg:w-2/5" margin-top="20">  
+        <h2 data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-quad" class="text-hero-text text-xl sm:text-2xl md:text-3xl font-bold mb-5">StudHome is a complete ecosystem for distance learning</h2>
+        <p data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-quad" class="text-base md:text-lg">Our online school platform, StudHome, offers a comprehensive ecosystem for distance learning. We provide high-quality learning materials, interactive tests and simulators, and dedicated teachers who are available to answer your questions, check your homework, and provide feedback to help you succeed.</p> <br>
+        <a href="#contact" class="border-2 border-main-text rounded-full px-5 py-1 md:px-12 md:py-3 text-main-text text-lg lg:text-xl font-semibold transition ease-in-out delay-75 hover:bg-main-text hover:text-white">Contact me!</a>
+      
       </div>
     </div>
 
@@ -41,8 +32,7 @@
       <div class="lg:flex flex-wrap justify-evenly w-full pt-5 lg:pt-20">
         <div class="lg:w-1/4 mt-10 lg:mt-0">
           <p class="text-2xl text-white lg:text-center font-bold mb-3 lg:mb-5">Preparation for school</p>
-          <p class="text-base text-white lg:text-center">Comprehensive classes for teaching future first graders reading,
-            writing and mathematics.</p>
+          <p class="text-base text-white lg:text-center">We believe in making online learning accessible to everyone, which is why we offer a trial period for you to explore our platform and choose the learning format that works best for you. You can start studying today and pay for your chosen format at the end of the trial period.</p>
         </div>
         <div class="lg:w-1/4 mt-10 lg:mt-0">
           <p class="text-2xl text-white lg:text-center font-bold mb-3 lg:mb-5">Parents are always up to date</p>
@@ -51,9 +41,7 @@
         </div>
         <div class="lg:w-1/4 mt-10 lg:mt-0">
           <p class="text-2xl text-white lg:text-center font-bold mb-3 lg:mb-5">Convenient schedule</p>
-          <p class="text-base text-white lg:text-center">Classes are held at convenient times. Whether you are traveling with
-            your family or living in another part of Kazakhstan, all you need is internet access to continue your studies.
-          </p>
+          <p class="text-base text-white lg:text-center">With our platform, you can access your class schedule and journal with grades, ensuring that you stay on track and motivated. And, upon successful completion of the UNT, you can enroll in our school and obtain a state certificate.</p>
         </div>
         <div class="lg:w-1/3 mt-10 lg:mt-20">
           <p class="text-2xl text-white lg:text-center font-bold mb-3 lg:mb-5">Addition to standard school education</p>
@@ -101,11 +89,11 @@
     </div>
 
     <div class="pb-20">
-      <div class="bg-white mx-3 lg:w-3/5 lg:mx-auto p-7 lg:p-12 rounded-xl">
+      <div id="contact" class="bg-white mx-3 md:w-3/5 md:mx-auto p-7 lg:p-12 rounded-xl">
         <h2 class="text-2xl lg:text-3xl text-hero-text font-bold">Have questions? <span class="text-main-text">We will contact
             you!</span></h2>
         <p class="text-base lg:text-lg mt-5">Leave your contact details and our manager will call you back within fifteen minutes</p>
-        <form target="_blank" action="https://formsubmit.co/sagadat.dauletxanuly@gmail.com" method="POST" class="my-5">
+        <form target="_blank" action="https://formsubmit.co/alban.2001@mail.ru" method="POST" class="my-5">
           <input id="name" name="name" type="text" v-model="name" placeholder="Enter your name"
             class="pl-5 pr-12 py-3 mr-5 rounded-xl cursor-pointer text-xl border-none bg-gray-200" required>
           <input name="number" placeholder="Enter your number"
@@ -122,7 +110,12 @@
   <Foot />
 </template>
 
-<script lang="ts">
+
+<script type="text/javascript">
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 import Navbar from '../components/Navbar.vue'
 import Foot from '../components/Footer.vue'
 import SlaiderHero from '../components/SlaiderHero.vue'
@@ -151,6 +144,13 @@ export default ({
       });
     },
   },
+  mounted() {
+    const smooth = ScrollSmoother.create({
+      smooth: 2,
+      effects: true,
+      duration: 0.1
+    })
+  }
 })
 </script>
 
