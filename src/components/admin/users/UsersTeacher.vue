@@ -38,11 +38,7 @@
           </select>
 
           <label>Department:</label>
-          <select v-model="department" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
-            <option value="1">Maths</option>
-            <option value="2">Science</option>
-            <option value="3">IT</option>
-          </select>
+          <input v-model="department" type="text" required class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
 
           <label>Phone</label>
           <input v-model="phone" type="number" required class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
@@ -58,8 +54,10 @@
       <div v-if="profile">
         <div class="flex flex-wrap mt-10">
           <div v-for="teacher in teachers" :key="teacher.id" class="bg-white rounded-md border shadow mr-5 mb-5">
-            <img src="/img/user.png" alt="" class="w-2/5 m-auto py-5">
-            <p class="text-xl text-center font-medium pb-5">{{ teacher.user.email }}</p>
+            <img src="/img/user.png" alt="" class="w-[100px] m-auto py-5">
+            <p class="text-xl text-left font-medium pb-5 px-3">Name: {{ teacher.name }}</p>
+            <!-- <p class="text-xl text-left font-medium pb-5 px-3">Section: {{ teacher.department.name }}</p> -->
+            <p class="text-xl text-left font-medium pb-5 px-3">Email: {{ teacher.user.email }}</p>
             <div class="flex justify-between items-center border-t ">
               <div class="w-1/3 py-5 px-7 border-r cursor-pointer hover:bg-gray-100 hover:text-main-text">
                 <font-awesome-icon class="text-lg" icon="fa-solid fa-pen-to-square" />
@@ -121,14 +119,22 @@ export default {
             body: JSON.stringify({
               gender: { id: this.gender },
               user: { id: data },
-              department: { id: this.department },
+              departments: this.department,
               phone: this.phone,
               name: this.name,
               permanentAddress: this.permanentAddress,
             })
           }
 
-          fetch('http://91.201.214.131:8080/teachers', teacherBody);
+          fetch('http://91.201.214.131:8080/teachers', teacherBody)
+          .then(() => {
+            alert('Teacher successfully established!');
+            this.getTeachers();
+          })
+          .catch(error => {
+            console.error(error);
+            alert('Error!' + error.message)
+          });
         });
     },
     getTeachers() {
