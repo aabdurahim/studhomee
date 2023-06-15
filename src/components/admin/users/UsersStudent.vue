@@ -41,11 +41,7 @@
           <input v-model="parentName" type="text" required class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
 
           <label>Section:</label>
-          <select v-model="section" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
-            <option value="1">Maths</option>
-            <option value="2">Science</option>
-            <option value="3">IT</option>
-          </select>
+            <input v-model="section" type="text" required class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
 
           <label>Roll:</label>
           <input v-model="roll" type="number" required class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
@@ -58,8 +54,10 @@
       <div v-if="profile">
         <div class="flex flex-wrap mt-10">
           <div v-for="student in students" :key="student.id" class="bg-white rounded-md border shadow mr-5 mb-5">
-            <img src="/img/user.png" alt="" class="w-2/5 m-auto py-5">
-            <p class="text-xl text-center font-medium pb-5">{{ student.user.email }}</p>
+            <img src="/img/user.png" alt="" class="w-[100px] m-auto py-5">
+            <p class="text-xl text-left font-medium pb-5 px-3">Name: {{ student.name }}</p>
+            <!-- <p class="text-xl text-left font-medium pb-5 px-3">Section: {{ student.section.name }}</p> -->
+            <p class="text-xl text-left font-medium pb-5 px-3">Email: {{ student.user.email }}</p>
             <div class="flex justify-between items-center border-t ">
               <div class="w-1/3 py-5 px-7 border-r cursor-pointer hover:bg-gray-100 hover:text-main-text">
                 <font-awesome-icon class="text-lg" icon="fa-solid fa-pen-to-square" />
@@ -122,13 +120,21 @@ export default {
               gender: { id: this.gender },
               user: { id: data },
               parentName: this.parentName,
-              section: { id: this.section },
+              sections: this.section,
               name: this.name,
               roll: this.roll
             })
           }
 
-          fetch('http://91.201.214.131:8080/students', studentBody);
+          fetch('http://91.201.214.131:8080/students', studentBody)
+          .then(() => {
+            alert('Student successfully established!');
+            this.getStudents();
+          })
+          .catch(error => {
+            console.error(error);
+            alert('Error!' + error.message)
+          });
         });
     },
     getStudents() {
