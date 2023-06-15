@@ -1,7 +1,7 @@
 <template>
   <Navbar class="mx-3 lg:mx-0" />
   <section class="mx-3 lg:mx-0">
-    <video autoplay muted loop src="/img/video2.webm"></video>
+    <video autoplay muted loop src="https://res.cloudinary.com/dmhy6sxqx/video/upload/v1685880168/video2_b8gxh6.webm"></video>
     <h2 class="absolute top-36 left-7 lg:top-72 lg:left-24 z-50 text-3xl lg:text-7xl text-gray-200 font-bold animate__animated animate__fadeInLeft animate__slow slick-active">NEWS</h2>
     <h3 class="absolute top-44 left-7 lg:top-96 lg:left-24 z-50 text-sm lg:text-2xl mt-2 lg:mt-0 text-gray-200 font-semibold animate__animated animate__fadeInLeft animate__slow slick-active">Stay up to date with the latest educational news</h3>
     <h4 class="absolute top-36 left-7 lg:top-96 lg:left-24 text-xs mt-16 lg:text-xl text-gray-200 animate__animated animate__fadeInLeft animate__slower slick-active">Search / Archive / Gallery / Categories / Recent News</h4>
@@ -32,38 +32,38 @@ export default {
     return {
       news: [
         {
-          title: 'Teacher strikes: How do teachers salaries compare across Europe?',
-          desc: 'Teachers are often hailed as heroes that are to be celebrated, but in many countries across Europe, theyre feeling undervalued and are even taking to the streets. Thousands of schools in England and Wales are set to close in February after teachers unions voted to strike. In Hungary, thousands of teachers marched in Budapest late last year, calling for higher salaries and urgent reforms from the government following strikes in September. Around 50 teachers have even been fired for "civil disobedience" after staging walkouts.Its part of a wider picture of malaise in education, with a growing teacher shortage spreading across Europe. In France, there are currently 4,000 vacancies, with the latest estimates in Germany suggesting a shortfall of 25,000 teachers by 2025.',
+          title: 'StudHome Launches New Program for Early Learners',
+          desc: 'StudHome is excited to announce a new program designed for preschoolers to help them develop the skills and knowledge they need to be successful in school. The program includes engaging lessons, fun activities, and age-appropriate assessments to track progress. With StudHomes early learning program, parents can feel confident that their little ones are getting a head start on their education.',
           img: '/img/25.webp',
           date: '27 May 2023'
         },
         {
-          title: '10 Law Schools Where the Most Accepted Students Enroll',
-          desc: 'Estime had hoped to attend Smith College, but says the school costs too much, at more than $45,000 a year for tuition and fees. The liberal arts major enrolled in Holyoke Community College last fall and plans to transfer to nearby Smith or the University of Massachusetts–Amherst for her junior year, depending on the financial aid award. Estime, in the meantime, has managed to keep her debt under $2,000, paying for college with private scholarships, Pell grants and a small loan.',
+          title: 'StudHome Wins Award for Innovative Online Learning Platform',
+          desc: 'StudHome is commitment to student-focused online education has earned us an award for our innovative platform. Our platform is cutting-edge technology, personalized learning options, and interactive design have all been recognized as industry-leading features. We are proud to be acknowledged for our dedication to providing high-quality online learning experiences.',
           img: '/img/26.jpg',
           date: '23 April 2023'
         },
         {
-          title: 'Ways Parents and Counselors Can Help Students Earn Scholarships',
-          desc: 'Pell grants: Pell grants function like vouchers for students to pay for higher education-related expenses, covering items such as books, transportation or tuition. Awards are based on financial need to students who have not earned a bachelors degree. More than two-thirds of Pell grants go to families making less than $50,000, according to Columbia Universitys Community College Research Center at Teachers College. These awards are also contingent on the students household size.',
+          title: 'Study from Anywhere with StudHome ',
+          desc: 'StudHome is flexible learning options allow students to study from anywhere, whether it is from home, on the go, or anywhere else they choose. With access to our platform is comprehensive course offerings and supportive community of educators, students can customize their learning experience to fit their unique needs and preferences.',
           img: '/img/27.jpg',
           date: '13 April 2023'
         },
         {
-          title: 'Consider MBA Programs That Offer Summer Prep in Namibia',
-          desc: 'Summer preparatory programs offered through schools allow students to get a head start on making connections and building skills.',
-          img: '/img/28.jpg',
+          title: 'StudHome Partners with Local Schools to Expand Access to Education',
+          desc: 'StudHome is partnering with schools across the country to provide students with access to high-quality online learning opportunities. Through these partnerships, students can supplement their in-person coursework with online classes and take advantage of StudHome is expert educators and comprehensive course offerings.',
+          img: '/img/77.jpg',
           date: '7 April 2023'
         },
         {
-          title: 'Teacher strikes: How do teachers salaries compare across Europe?',
-          desc: 'Teachers are often hailed as heroes that are to be celebrated, but in many countries across Europe, theyre feeling undervalued and are even taking to the streets. Thousands of schools in England and Wales are set to close in February after teachers unions voted to strike. In Hungary, thousands of teachers marched in Budapest late last year, calling for higher salaries and urgent reforms from the government following strikes in September. Around 50 teachers have even been fired for "civil disobedience" after staging walkouts.Its part of a wider picture of malaise in education, with a growing teacher shortage spreading across Europe. In France, there are currently 4,000 vacancies, with the latest estimates in Germany suggesting a shortfall of 25,000 teachers by 2025.',
+          title: 'StudHome Introduces Virtual Reality Learning Experience',
+          desc: 'StudHome is excited to announce a new virtual reality (VR) learning experience for students. This innovative tool immerses students in realistic simulations and environments to enhance their learning experience. With VR, students can explore historical sites, conduct virtual science experiments, and more, all while developing important critical thinking and problem-solving skills.',
           img: '/img/29.jpg',
           date: '1 April 2023'
         },
         {
-          title: 'Teacher strikes: How do teachers salaries compare across Europe?',
-          desc: 'Teachers are often hailed as heroes that are to be celebrated, but in many countries across Europe, theyre feeling undervalued and are even taking to the streets. Thousands of schools in England and Wales are set to close in February after teachers unions voted to strike. In Hungary, thousands of teachers marched in Budapest late last year, calling for higher salaries and urgent reforms from the government following strikes in September. Around 50 teachers have even been fired for "civil disobedience" after staging walkouts.Its part of a wider picture of malaise in education, with a growing teacher shortage spreading across Europe. In France, there are currently 4,000 vacancies, with the latest estimates in Germany suggesting a shortfall of 25,000 teachers by 2025.',
+          title: 'Online Learning on the Rise',
+          desc: 'StudHome Sees Surge in Enrollment as More Students Turn to Virtual Education: As more students turn to online learning, StudHome has seen a surge in enrollment. Our platform is flexible learning options, personalized support, and comprehensive course offerings have all contributed to our popularity among students looking for high-quality online education.',
           img: '/img/30.jpg',
           date: '30 March 2023'
         }
