@@ -1,7 +1,7 @@
 <template>
   <main class="login bg-gray-100 h-full px-3 lg:px-0">
-    <section class="form pt-20 py-36">
-      <div class="lg:w-1/3 mx-auto">
+    <section class="form pt-20">
+      <div class="lg:w-1/3 m-auto">
         <div class="w-1/2 flex mx-auto">
           <h2 class="text-3xl lg:text-4xl font-semibold text-center my-5 text-hero-text">StudHome</h2>
           <img src="/img/logo1.png" alt="" class="w-16 lg:w-20">
@@ -9,8 +9,8 @@
         <div class="bg-white py-7 lg:py-10 px-10 rounded-xl border border-gray-200">
           <h2 class="text-center text-xl font-semibold mb-5 lg:mb-10">Create an account</h2>
           <form class="login" @submit.prevent="registerUser">
-            <label for="name" class="font-semibold">Name</label>
-            <input type="text" placeholder="Enter your name" v-model="name" class="py-3 w-11/12 pl-5 mb-3 lg:mb-5 bg-gray-100 rounded-lg" />
+            <label for="name" class="font-semibold">Name</label> <br>
+            <input type="text" placeholder="Enter your name" v-model="name" class="py-3 w-11/12 pl-5 mb-3 lg:mb-5 bg-gray-100 rounded-lg" /> <br>
             <label for="email" class="font-semibold">Email address</label>
             <input type="email" v-model="email" placeholder="Enter e-mail address" class="py-3 w-11/12 pl-5 mb-5 bg-gray-100 rounded-lg" />
             <label for="password" class="font-semibold">Password</label>
@@ -66,6 +66,7 @@ export default {
         .then(response => response.json())
         .then(data => {
           if(this.role.id === 3) {
+            
               const studentBody = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -102,7 +103,9 @@ export default {
 </script>
 
 <style scoped>
-
+main {
+  min-height: 100vh;
+}
 .btn {
   transition: 0.3s;
 }
