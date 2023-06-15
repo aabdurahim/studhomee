@@ -1,6 +1,6 @@
 <template>
   <main class="login bg-gray-100 h-full px-3 lg:px-0">
-    <section class="form pt-20 py-36">
+    <section class="form pt-20">
       <div class="lg:w-1/3 mx-auto">
         <div class="w-1/2 flex mx-auto">
           <h2 class="text-3xl lg:text-4xl font-semibold text-center my-5 text-hero-text">StudHome</h2>
@@ -64,7 +64,9 @@ export default {
 </script>
 
 <style scoped>
-
+main {
+  min-height: 100vh;
+}
 .btn {
   transition: 0.3s;
 }
