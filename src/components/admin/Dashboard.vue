@@ -6,33 +6,33 @@
       <div class="pb-7 flex">
         <h2 class="text-xl font-semibold">Dashboard</h2>
       </div>
-      <div class="flex flex-wrap justify-between">
-        <div class="flex bg-white rounded-md p-5 w-[22%]">
-          <font-awesome-icon icon="fa-solid fa-user-group" class="text-2xl text-white bg-blue-1 p-4 rounded-md" />
+      <div class="sm:flex sm:flex-wrap grid grid-cols-2 justify-between">
+        <div class="flex bg-white rounded-md p-5 m-3 sm:m-0 sm:w-[22%]">
+          <font-awesome-icon icon="fa-solid fa-user-group" class="text-2xl text-white bg-blue-1 p-3 sm:p-2 md:p-4 rounded-md" />
           <div class="ml-3">
-            <p class="text-xl">Students</p>
-            <p class="text-xl font-semibold">8</p>
+            <p class="lg:text-xl md:text-base sm:text-sm text-md">Students</p>
+            <p class="lg:text-xl md:text-base sm:text-sm text-md font-semibold">8</p>
           </div>
         </div>
-        <div class="flex bg-white rounded-md p-5 w-[22%]">
-          <font-awesome-icon icon="fa-solid fa-user-group" class="text-2xl text-white bg-blue-2 p-4 rounded-md" />
+        <div class="flex bg-white rounded-md p-5 m-3 sm:m-0 sm:w-[22%]">
+          <font-awesome-icon icon="fa-solid fa-user-group" class="text-2xl text-white bg-blue-2 p-3 sm:p-2 md:p-4 rounded-md" />
           <div class="ml-3">
-            <p class="text-xl">Teachers</p>
-            <p class="text-xl font-semibold">5</p>
+            <p class="lg:text-xl md:text-base sm:text-sm text-md">Teachers</p>
+            <p class="lg:text-xl md:text-base sm:text-sm text-md font-semibold">5</p>
           </div>
         </div>  
-        <div class="flex bg-white rounded-md p-5 w-[22%]">
-          <font-awesome-icon icon="fa-regular fa-file-lines" class="text-2xl text-white bg-orange-1 p-4 rounded-md" />
+        <div class="flex bg-white rounded-md p-5 m-3 sm:m-0 sm:w-[22%]">
+          <font-awesome-icon icon="fa-regular fa-file-lines" class="text-2xl text-white bg-orange-1 p-3 sm:p-2 md:p-4 rounded-md" />
           <div class="ml-3">
-            <p class="text-xl">Exams</p>
-            <p class="text-xl font-semibold">13</p>
+            <p class="lg:text-xl md:text-base sm:text-sm text-md">Exams</p>
+            <p class="lg:text-xl md:text-base sm:text-sm text-md font-semibold">13</p>
           </div>
         </div>
-        <div class="flex bg-white rounded-md p-5 w-[22%]">
-          <font-awesome-icon icon="fa-solid fa-calendar-day" class="text-2xl text-white bg-blue-2 p-4 rounded-md" />
+        <div class="flex bg-white rounded-md p-5 m-3 sm:m-0 sm:w-[22%]">
+          <font-awesome-icon icon="fa-solid fa-calendar-day" class="text-2xl text-white bg-blue-2 p-3 sm:p-2 md:p-4 rounded-md" />
           <div class="ml-3">
-            <p class="text-xl">Events</p>
-            <p class="text-xl font-semibold">11</p>
+            <p class="lg:text-xl md:text-base sm:text-sm text-md">Events</p>
+            <p class="lg:text-xl md:text-base sm:text-sm text-md font-semibold">11</p>
           </div>
         </div>
       </div>
