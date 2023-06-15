@@ -12,7 +12,7 @@
           <span @click="toggleAttendanceList" :class="{ active: showAttendanceList }" class="mx-3">Attendance</span>
           <div v-if="showAttendanceList">
             <p @click="showAttendance('student'), setActiveList(10)" :class="{ active2: activeList === 10 }" class="hover:text-gray-500 text-lg px-9 py-1 transition ease-in-out delay-75">Student Attendance</p>
-            <!-- <p @click="showAttendance('teacher'), setActiveList(11)" :class="{ active2: activeList === 11 }" class="hover:text-gray-500 text-lg px-9 py-1 transition ease-in-out delay-75">Teacher Attendance</p> -->
+             <p @click="showAttendance('teacher'), setActiveList(11)" :class="{ active2: activeList === 11 }" class="hover:text-gray-500 text-lg px-9 py-1 transition ease-in-out delay-75">Teacher Attendance</p> 
           </div>
         </li>
         <li :class="{ active: activeIndex === 2 }" @click="setActiveIndex(2)" class="text-lg py-3 transition ease-in-out delay-75">
