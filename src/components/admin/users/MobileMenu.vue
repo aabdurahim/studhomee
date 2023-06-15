@@ -46,10 +46,10 @@
             <p @click="showExam('result'), setActiveList(14)" :class="{ active2: activeList === 14 }" class="hover:text-gray-500 text-lg px-9 py-1 transition ease-in-out delay-75">Result</p>
           </div>
         </li>
-        <!-- <li :class="{ active: activeIndex === 5 }" @click="setActiveIndex(5)" class="hover:text-gray-500 text-lg py-3 transition ease-in-out delay-75">
+        <li :class="{ active: activeIndex === 5 }" @click="setActiveIndex(5)" class="hover:text-gray-500 text-lg py-3 transition ease-in-out delay-75">
           <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
           <span class="mx-3">Report</span>
-        </li> -->
+        </li> 
         <li :class="{ active: activeIndex === 6 }" @click="setActiveIndex(6)" class="hover:text-gray-500 text-lg py-3 transition ease-in-out delay-75">
           <font-awesome-icon icon="fa-regular fa-bell" /> 
           <span class="mx-3" @click="toggleAnnouncementList" :class="{ active: showAnnouncementist }">Announcement</span>
@@ -57,18 +57,18 @@
             <p @click="showAnnouncement('message'), setActiveList(15)" :class="{ active2: activeList === 15 }" class="hover:text-gray-500 text-lg px-9 py-2 transition ease-in-out delay-75">Message</p>
           </div>
         </li>
-        <!-- <li :class="{ active: activeIndex === 7 }" @click="setActiveIndex(7)" class="hover:text-gray-500 text-lg py-3 transition ease-in-out delay-75">
+         <li :class="{ active: activeIndex === 7 }" @click="setActiveIndex(7)" class="hover:text-gray-500 text-lg py-3 transition ease-in-out delay-75">
           <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
           <span class="mx-3">Accounting</span>
         </li>
         <li :class="{ active: activeIndex === 8 }" @click="setActiveIndex(8)" class="hover:text-gray-500 text-lg py-3 transition ease-in-out delay-75">
           <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
           <span class="mx-3">Roles</span>
-        </li> -->
-        <!-- <li :class="{ active: activeIndex === 9 }" @click="setActiveIndex(9)" class="hover:text-gray-500 text-lg py-3 transition ease-in-out delay-75">
+        </li> 
+       <li :class="{ active: activeIndex === 9 }" @click="setActiveIndex(9)" class="hover:text-gray-500 text-lg py-3 transition ease-in-out delay-75">
           <font-awesome-icon icon="fa-solid fa-chalkboard-user" />
           <span class="mx-3">Settings</span>
-        </li> -->
+        </li> 
         <li :class="{ active: activeIndex === 10 }" @click="setActiveIndex(10)" class="hover:text-gray-500 text-lg py-3 transition ease-in-out delay-75">
           <font-awesome-icon icon="fa-solid fa-right-from-bracket" />
           <span class="mx-3"  @click="$store.dispatch('logout')">Logout</span>
