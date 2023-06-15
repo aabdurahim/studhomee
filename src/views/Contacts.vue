@@ -7,7 +7,7 @@
         <h2 class="text-2xl lg:text-4xl font-semibold">Get in Touch</h2>
         <hr class="w-1/6 bg-hero-text my-2">
         <p class="text-sm text-hero-text lg:w-2/3 my-5 lg:my-7">You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.</p>
-        <form target="_blank" action="https://formsubmit.co/sagadat.dauletxanuly@gmail.com" method="POST" class="block">
+        <form target="_blank" action="https://formsubmit.co/alban.2001@mail.ru" method="POST" class="block">
           <div class="lg:flex">
             <div>
               <label for="first-name" class="text-gray-700">First Name</label>
@@ -39,10 +39,10 @@
           <h4 class="text-xl font-semibold">Socials</h4>
           <hr class="w-full bg-hero-text my-2">
           <div class="flex mt-5">
+            <a href="https://api.whatsapp.com/send?phone=77081512439"><font-awesome-icon icon="fa-brands fa-whatsapp" class="text-3xl text-gray-500 hover:text-hero-block mr-2 cursor-pointer" /></a>
+            <a href="https://t.me/@Kind_er_surprise"><font-awesome-icon icon="fa-brands fa-telegram" class="text-3xl text-gray-500 hover:text-hero-block mr-2 cursor-pointer" /></a>
             <font-awesome-icon icon="fa-brands fa-instagram" class="text-3xl text-gray-500 hover:text-hero-block mr-2 cursor-pointer" />
-            <font-awesome-icon icon="fa-brands fa-telegram" class="text-3xl text-gray-500 hover:text-hero-block mr-2 cursor-pointer" />
             <font-awesome-icon icon="fa-brands fa-twitter" class="text-3xl text-gray-500 hover:text-hero-block mr-2 cursor-pointer" />
-            <font-awesome-icon icon="fa-brands fa-whatsapp" class="text-3xl text-gray-500 hover:text-hero-block mr-2 cursor-pointer" />
           </div>
         </div>
 
