@@ -33,11 +33,7 @@
             <label>Class</label>
             <select v-model="class1" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
               <option value="">Select Class</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-              <option value="4">Four</option>
-              <option value="5">Five</option>
+              <option v-for="class1 in classes" :key="class1.id" :value="class1.id" >{{ class1.number }}</option>
             </select>
 
             <label>Name</label>
@@ -49,26 +45,26 @@
             <label>Optional</label>
             <div class="my-5">
               <label>
-                <input type="radio" v-model="role" :value="{ id: 1 }">
+                <input type="radio" v-model="optional" :value="true">
                 Yes
               </label>
               <label>
-                <input type="radio" v-model="role" :value="{ id: 2 }">
+                <input type="radio" v-model="optional" :value="false">
                 No
               </label>
             </div>
             
-            <label>Type</label>
+            <!-- <label>Type</label>
             <select v-model="type" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
               <option value="1">Theory</option>
               <option value="2">Practical</option>
-            </select>
+            </select> -->
 
             <label>Pass Marks</label>
-            <input v-model="passMarks" type="text" required placeholder="Enter Name" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
+            <input v-model="passMark" type="text" required placeholder="Enter Name" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
 
             <label>Total Marks</label>
-            <input v-model="totalMarks" type="text" required placeholder="Enter Name" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
+            <input v-model="totalMark" type="text" required placeholder="Enter Name" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
 
             <button type="submit" class="btn border-2 hover:border-main-text hover:bg-white rounded-lg px-20 py-2 mt-5 hover:text-main-text text-xl font-semibold bg-blue-2 text-white cursor-pointer transition ease-in-out delay-75">Submit</button>
           </form>
@@ -130,18 +126,18 @@
                   No
                 </label>
               </div>
-
+<!-- 
               <label>Type</label>
               <select v-model="type" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
                 <option value="1">Theory</option>
                 <option value="2">Practical</option>
-              </select>
+              </select> -->
 
               <label>Pass Marks</label>
-              <input v-model="passMarks" type="text" required placeholder="Enter Name" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
+              <input v-model="passMark" type="text" required placeholder="Enter Name" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
 
               <label>Total Marks</label>
-              <input v-model="totalMarks" type="text" required placeholder="Enter Name" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
+              <input v-model="totalMark" type="text" required placeholder="Enter Name" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
 
               <button type="submit" class="btn border-2 hover:border-main-text hover:bg-white rounded-lg px-20 py-2 mt-5 hover:text-main-text text-xl font-semibold bg-blue-2 text-white cursor-pointer transition ease-in-out delay-75">Submit</button>
               </form>
@@ -170,8 +166,8 @@ export default {
       class1: '',
       name: '',
       code: '',
-      role: '',
-      type: '',
+      optional: '',
+      // type: '',
       passMark: '',
       totalMark: ''
     };
@@ -188,6 +184,25 @@ export default {
         });
   },
   methods: {
+    handleSubmit() {
+      axios.post('http://91.201.214.131:8080/subjects', {
+        classs: {id: this.class1},
+        name: this.name,
+        code: this.code,
+        optional: this.optional,
+        passMark: this.passMark,
+        totalMark: this.totalMark
+      })
+      .then(response => {
+          console.log(response.data);
+          alert('Subject successfully established!');
+          this.getSubjects();
+        })
+        .catch(error => {
+          console.error(error);
+          alert('Error!' + error.message)
+        });
+    },
     handleClassSelect() {
       console.log(this.selectedClass)
       let id = this.selectedClass
@@ -206,6 +221,8 @@ export default {
           this.subjects = data
         })
     },
+    
+    
     showForm() {
       this.form = true,
       this.profile = false,
