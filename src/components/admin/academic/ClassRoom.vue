@@ -99,9 +99,12 @@ export default {
 
       .then(response => {
           console.log(response.data);
+          alert('Classroom successfully established!');
+          this.getClassRooms();
         })
         .catch(error => {
           console.error(error);
+          alert('Error!' + error.message)
         });
     },
     getClassRooms() {
