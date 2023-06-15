@@ -93,12 +93,14 @@ export default {
       axios.post('http://91.201.214.131:8080/departments', {
         name: this.name
       })
-
       .then(response => {
           console.log(response.data);
+          alert('Department successfully established!');
+          this.getDepartments();
         })
         .catch(error => {
           console.error(error);
+          alert('Error!' + error.message)
         });
     },
     getDepartments() {
@@ -115,13 +117,22 @@ export default {
           method: 'POST',
         })
       }
-      this.$router.go()
+      this.getDepartments();
     },
     updateDepartment(id) {
       axios.post('http://91.201.214.131:8080/departments', {
         id: this.departmentId,
         name: this.name
       })
+      .then(response => {
+          console.log(response.data);
+          alert('Department successfully changed!');
+          this.getDepartments();
+        })
+        .catch(error => {
+          console.error(error);
+          alert('Error!' + error.message)
+        });
     },
     showForm() {
       this.form = true,
