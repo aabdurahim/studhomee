@@ -10,12 +10,12 @@
         </div>
       </div>
 
-      <div class="w-2/3 mx-auto flex items-center my-10">
+      <div class="w-3/4 md:w-2/3 mx-auto sm:flex grid grid-cols-2 items-center my-10">
         <div>
         <input type="date" id="selected-date" @change="handleDateSelect" v-model="selectedDate" class="border py-2 px-3 mr-3 border-gray-300 rounded-md">
       </div>
 
-      <div v-if="selectedDate">
+      <div v-if="selectedDate" class="sm:m-0 m-2">
         <select id="class-select" v-model="selectedClass" @change="handleClassSelect" class="border py-2 px-3 mr-3 border-gray-300 rounded-md">
           <option value="">Select Class</option>
           <option v-for="class1 in classes" :key="class1.id" :value="class1.id" >{{ class1.number }}</option>
@@ -31,7 +31,8 @@
       </div>
 
       <div v-if="selectedSection">
-        <button @click="getAttendance()" class="btn border-2 hover:border-main-text hover:bg-white rounded-lg px-3 py-1 hover:text-main-text text-lg font-semibold bg-blue-2 text-white cursor-pointer transition ease-in-out delay-75">Get Students List</button>
+        <button @click="getAttendance()" class="lg:block hidden btn border-2 hover:border-main-text hover:bg-white rounded-lg px-3 lg:py-1 py-2 hover:text-main-text text-sm lg:text-lg font-semibold bg-blue-2 text-white cursor-pointer transition ease-in-out delay-75">Get Students List</button>
+        <button @click="getAttendance()" class="lg:hidden block btn border-2 hover:border-main-text hover:bg-white rounded-lg px-3 lg:py-1 py-2 hover:text-main-text text-sm lg:text-lg font-semibold bg-blue-2 text-white cursor-pointer transition ease-in-out delay-75">Get List</button>
       </div>
       </div>
 
