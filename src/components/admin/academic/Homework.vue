@@ -37,6 +37,16 @@
             </div>
           <form @submit.prevent="handleSubmit" class="my-10 w-3/5 mx-auto">
 
+
+
+
+
+
+
+
+
+
+
             <label>Title</label>
             <input v-model="title" type="text" required placeholder="Enter Title" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
 
@@ -54,9 +64,9 @@
             </select>
 
             <label>Section</label>
-            <select v-model="selectedSection" @change="handleSectionSelect" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
+            <select v-model="selectedSection" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
               <option value="">Select Section</option>
-              <option v-for="section in sections" :key="section.id" :value="section.id" >{{ section.name }}</option>
+              <option v-for="section in sections" :key="section.id" :value="section.id" v-if="subject.class == selectedClass">{{ section.name }}</option>
             </select>
 
             <label>Subject</label>
@@ -66,13 +76,9 @@
             </select>
 
             <label>Class Room</label>
-            <select v-model="classRoom" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
+            <select v-model="selectedRoom" @change="handleSubjectSelect" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
               <option value="">Select Class Room</option>
-              <option value="1">100</option>
-              <option value="2">101</option>
-              <option value="3">102</option>
-              <option value="4">103</option>
-              <option value="5">104</option>
+              <option v-for="room in rooms" :key="room.id" :value="room.id">{{ room.number }}</option>
             </select>
 
             <div class="flex mb-5">
@@ -124,7 +130,7 @@
      </div>
 
       
-      <div v-if="details">
+    <!--  <div v-if="details">
         <div class="bg-white rounded-md my-10 pb-5">
           <div class="flex justify-between items-center p-3 border-b">
               <p class="text-lg font-medium">Edit Homework</p>
@@ -149,10 +155,10 @@
               </select>
 
               <label>Section</label>
-              <select v-model="selectedSection" @change="handleSectionSelect" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
-                <option value="">Select Section</option>
-                <option v-for="section in sections" :key="section.id" :value="section.id" >{{ section.name }}</option>
-              </select>
+            <select v-model="selectedSection" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
+              <option value="">Select Section</option>
+              <option v-for="section in sections" :key="section.id" :value="section.id" v-if="subject.class == selectedClass">{{ section.name }}</option>
+            </select>
 
               <label>Subject</label>
               <select v-model="selectedSubject" @change="handleSubjectSelect" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
@@ -183,7 +189,7 @@
               <button @click="updateHomework()" type="submit" class="btn border-2 hover:border-main-text hover:bg-white rounded-lg px-20 py-2 mt-5 hover:text-main-text text-xl font-semibold bg-blue-2 text-white cursor-pointer transition ease-in-out delay-75">Save</button>
             </form>
         </div>
-      </div>
+      </div>-->
     </div>
   </section>
 </template>
@@ -233,12 +239,24 @@ export default {
           this.classes = data; 
           console.log(this.classes)
         });
+
+        fetch('http://91.201.214.131:8080/rooms')
+        .then(response => response.json())
+        .then(data => {
+          this.rooms = data; 
+        });
+
+
         fetch('http://91.201.214.131:8080/teachers')
         .then(response => response.json())
         .then(data => {
           this.teachers = data; 
         });
-        
+        fetch('http://91.201.214.131:8080/sections')
+        .then(response => response.json())
+        .then(data => {
+          this.sections = data; 
+        });
         fetch('http://91.201.214.131:8080/subjects')
         .then(response => response.json())
         .then(data => {
@@ -265,9 +283,12 @@ export default {
       )})
       .then(response => {
           console.log(response.data);
+          alert('Homework successfully established!');
+          this.getHomework();
         })
         .catch(error => {
           console.error(error);
+          alert('Error!' + error.message)
         });
     },
     handleClassSelect() {
@@ -286,32 +307,32 @@ export default {
         }); 
         this.section = null
     },
-    handleSectionSelect() {
-      let id = this.selectedSection
+   // handleSectionSelect() {
+      //let id = this.selectedSection
       // fetch('http://91.201.214.131:8080/sections/' + id) 
       // .then(response => response.json()) 
       //    .then(data => { 
-      //     this.section = data; 
-      //     console.log(this.section)
+       //   this.section = data; 
+       //  console.log(this.section)
       //   }); 
-    },
-    handleTeacherSelect() {
-      let id = this.selectedTeacher
+   // },
+   // handleTeacherSelect() {
+     // let id = this.selectedTeacher
       // fetch('http://91.201.214.131:8080/teachers/' + id) 
       // .then(response => response.json()) 
       //    .then(data => { 
       //     this.teacher = data; 
       //     console.log(this.teacher)
       //   }); 
-    },
-    handleSubjectSelect() {
-      let id = this.selectedClass
+   // },
+   // handleSubjectSelect() {
+     // let id = this.selectedClass
       // fetch('http://91.201.214.131:8080/subjects?c=' + id) 
       // .then(response => response.json()) 
       //    .then(data => { 
       //     this.subject = data; 
       //   }); 
-    },
+    //},
     getHomework() {
       fetch('http://91.201.214.131:8080/homeworks?s=' + this.selectedSection)
       .then(response => response.json()) 
