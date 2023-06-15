@@ -19,14 +19,14 @@
           </div>
         <form @submit.prevent="handleSubmit" class="my-10 w-3/5 mx-auto">
 
-          <label>Class Name</label>
+          <label>Class Number</label>
           <input v-model="number" type="text" required placeholder="Name" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
 
           <label>Class Numeric</label>
           <input v-model="numeric" type="text" required placeholder="Enter Class Numeric" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
 
           <label>Section</label>
-          <select v-model="section" placeholder="Select Section" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
+          <select v-model="selectedSection" placeholder="Select Section" class="w-full border py-2 px-3 mt-2 mb-5 border-gray-300 rounded-md">
             <option value="">Choose Section</option>
             <option v-for="section in sections" :key="section.id" :value="section.id" >{{ section.name }}</option>
           </select>
@@ -98,10 +98,11 @@ export default {
       details: false,
 
       classes: [],
+      sections: [],
+      selectedSection: '',
+      section: '',
       number: '',
-      numeric: '',
-      section: null,
-      sections: []
+      numeric: ''
     }
   },
   components: {
@@ -120,14 +121,17 @@ export default {
       axios.post('http://91.201.214.131:8080/classes', {
         number: this.number,
         numeric: this.numeric,
-        sections: {id: this.section.id}
+        sections: [{ id:this.selectedSection }]
       })
 
       .then(response => {
           console.log(response.data);
+          alert('Class successfully established!');
+          this.getClasses();
         })
         .catch(error => {
           console.error(error);
+          alert('Error!' + error.message)
         });
     },
     getClasses() {
